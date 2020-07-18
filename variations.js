@@ -20,6 +20,8 @@ while (low <= high) {
     }
 }
 
+//Returning 'low' here would return the first search insert position
+
 
 
 
