@@ -1,0 +1,115 @@
+//Various implementations of binary search
+
+
+
+
+
+//Finding the element normally
+let low = 0
+let high = nums.length - 1
+
+while (low <= high) {
+    let mid = Math.floor((low + high) / 2)
+
+    if (nums[mid] == target) {
+        return mid
+    } else if (nums[mid] > target) {
+        high = mid - 1
+    } else {
+        low = mid + 1
+    }
+}
+
+
+
+
+
+//Finding the first position of an element
+//(The element DOES have to exist in this case)
+let low = 0 
+let high = nums.length - 1
+let ans = -1
+
+while (low <= high) {
+    let mid = Math.floor((low + high) / 2)
+
+    if (nums[mid] < target) {
+        low = mid + 1
+    } else if (nums[mid] > target) {
+        high = mid - 1
+    } else if (nums[mid] == key) {
+        ans = mid 
+        high = mid - 1
+    }
+}
+
+//Return -1 if it doesn't exist
+return ans
+
+
+
+
+
+//Finding the last position of an element
+//(The element DOES have to exist in this case)
+let low = 0 
+let high = nums.length - 1
+let ans = -1
+
+while (low <= high) {
+    let mid = Math.floor((low + high) / 2)
+
+    if (nums[mid] < target) {
+        low = mid + 1
+    } else if (nums[mid] > target) {
+        high = mid - 1
+    } else if (nums[mid] == key) {
+        ans = mid 
+        low = mid + 1
+    }
+}
+
+//Return -1 if it doesn't exist
+return ans
+
+
+
+
+
+//Finding the first position of an element
+//(The element does NOT have to exist in this case)
+let low = 0
+let high = nums.length - 1
+
+while (low < high) {
+    let mid = Math.floor((low + high) / 2)
+
+    if (nums[mid] >= target) {
+        high = mid
+    } else {
+        low = mid + 1
+    }
+}
+
+return low
+
+
+
+
+
+//Find the last position of an element
+//(The element does NOT have to exist in this case)
+let low = 0
+let high = nums.length - 1
+
+while (low < high) {
+    let mid = Math.floor((low + high) / 2)
+
+    if (nums[mid] <= target) {
+        low = mid + 1
+    } else {
+        high = mid
+    }
+}
+
+return low
