@@ -91,7 +91,11 @@ while (low < high) {
     }
 }
 
-return low
+if (nums[low] !== target) {
+    return -1
+} else {
+    return low
+}
 
 
 
@@ -112,4 +116,8 @@ while (low < high) {
     }
 }
 
-return low
+if (nums[low] !== target) {
+    return low - 1
+} else {
+    return low
+}
