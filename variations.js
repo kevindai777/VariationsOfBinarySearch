@@ -48,6 +48,20 @@ while (low <= high) {
 //Return -1 if it doesn't exist
 return ans
 
+//A variation of finding the first instance of a target (278. First Bad Version)
+let low = 0
+let high = n
+
+while (low <= high) {
+    let mid = Math.floor((low + high) / 2)
+    
+    if (isBadVersion(mid)) {
+        high = mid
+    } else {
+        low = mid + 1
+    }
+}
+
 
 
 
@@ -78,7 +92,7 @@ return ans
 
 
 
-//Finding the first position of an element
+//Finding the first position of an element (34. Find first and last position of element in sorted array)
 //(The element does NOT have to exist in this case)
 let low = 0
 let high = nums.length - 1
@@ -103,7 +117,7 @@ if (nums[low] !== target) {
 
 
 
-//Find the last position of an element
+//Find the last position of an element (34. Find first and last position of element in sorted array)
 //(The element does NOT have to exist in this case)
 let low = 0
 let high = nums.length - 1
